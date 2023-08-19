@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HIT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_txt">ENTER</string>
+    <string name="terms_txt">I agree to Terms &amp; Conditions</string>
+    <string name="device_pair_success_txt">The selected device is associated with the player</string>
+    <string name="device_pair_error_txt">This device is already associated to a user. Please select different device from the list.</string>
+    <string name="enable_bluetooth_txt">The application requires to turn on your bluetooth</string>
+    <string name="enable_location_txt">The application requires to turn on your location</string>
+
+    <string name="channel_name">HIT</string>
+    <string name="channel_description">HIT Notification</string>
+
+</resources>

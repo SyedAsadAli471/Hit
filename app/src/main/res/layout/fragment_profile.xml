@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_small" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Profile Creation"
+                android:textColor="#FFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/user_image_upload_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_white_empty_thick"
+                android:padding="0dp">
+                <!--Circular Image View-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image_upload"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/profile_icon" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/device_type_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_image_upload_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/type_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/impact_logo" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/type_2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/device_type_2_bg" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/type_3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/device_type_3_bg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/device_type_layout"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/name_logo"
+                            android:layout_width="30dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/user" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter name"
+                    android:maxLines="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/age_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/name_layout"
+                android:layout_marginHorizontal="25dp">
+
+                <LinearLayout
+                    android:id="@+id/age_logo_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/age_logo"
+                            android:layout_width="30dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/user" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/age_logo"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/age_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/age_logo_layout"
+                    android:hint="Select Age"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/enter_age_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_rounded_background"
+                    android:text="@string/enter_txt"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weight_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/age_layout"
+                android:layout_marginHorizontal="25dp">
+
+                <LinearLayout
+                    android:id="@+id/weight_logo_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_above="@id/age_logo"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/weight_logo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/weight" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/age_logo"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weight_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/weight_logo_layout"
+                    android:hint="Select Weight"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/enter_weight_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_rounded_background"
+                    android:text="@string/enter_txt"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/height_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/weight_layout"
+                android:layout_marginHorizontal="25dp">
+
+                <LinearLayout
+                    android:id="@+id/height_logo_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/height_logo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/weight" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/age_logo"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/height_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/height_logo_layout"
+                    android:hint="Select Height"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/enter_height_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_rounded_background"
+                    android:text="@string/enter_txt"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sport_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/height_layout"
+                android:layout_marginHorizontal="25dp">
+
+                <LinearLayout
+                    android:id="@+id/sport_logo_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/sport_logo"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/sport" />
+
+                    </FrameLayout>
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/age_logo"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sport_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/sport_logo_layout"
+                    android:hint="Select Sport"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/enter_sport_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_rounded_background"
+                    android:text="@string/enter_txt"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/position_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/sport_layout"
+                android:layout_marginHorizontal="25dp">
+
+                <LinearLayout
+                    android:id="@+id/position_logo_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/position_logo"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/sport" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/age_logo"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/position_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/position_logo_layout"
+                    android:hint="Select Position"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/enter_position_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_rounded_background"
+                    android:text="@string/enter_txt"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/position_layout"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/email_logo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/email" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="-2dp"
+                        android:background="@color/grey_dark" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter Email"
+                    android:maxLines="1"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/device_id_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/email_layout"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-2dp"
+                        android:background="@color/grey_dark" />
+
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/circle_white_empty"
+                        android:padding="0dp">
+                        <!--Circular Image View-->
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/device_id_logo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/device_id" />
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/device_id_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Device ID"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/max_threshold_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/device_id_layout"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="5dp">
+
+                <com.app.hit.ui.customviews.TextThumbSeekBar
+                    android:id="@+id/max_threshold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/device_id_layout"
+                    android:max="100"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/seekbar_bg"
+                    android:thumb="@drawable/shape_seekbar_thumb"
+                    android:thumbOffset="4dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/min_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/max_threshold_layout"
+                android:layout_alignStart="@id/max_threshold_layout"
+                android:layout_marginHorizontal="25dp"
+                android:text="10"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/max_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/max_threshold_layout"
+                android:text="100"
+                android:visibility="gone"
+                android:layout_alignEnd="@id/max_threshold_layout"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recommend_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/min_txt"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Recommended gforce threshold level automatically set"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/primary_user_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recommend_txt"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:buttonTint="@color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/primary_user_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/primary_user_check"
+                android:layout_alignBottom="@id/primary_user_check"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/primary_user_check"
+                android:gravity="center_vertical"
+                android:text="Set as primary user"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/terms_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/primary_user_check"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:buttonTint="@color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/terms_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/terms_check"
+                android:layout_alignBottom="@id/terms_check"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/terms_check"
+                android:gravity="center_vertical"
+                android:text="@string/terms_txt"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/terms_check"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="30dp"
+                android:background="@drawable/save_button_blue_rounded"
+                android:text="Save Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

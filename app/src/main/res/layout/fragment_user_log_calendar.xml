@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:clickable="true">
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo_small" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Calendar"
+                    android:textColor="#FFF"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/card_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/title"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_primary_stroke">
+
+                    <LinearLayout
+                        android:id="@+id/main_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/threshold_img"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/impact_tracking" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/threshold_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="0 Threshold impact this year"
+                            android:textColor="#FFF"
+                            android:textSize="12sp" />
+
+                        <LinearLayout
+                            android:id="@+id/date_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/threshold_txt"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/threshold_txt"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/date_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="January, 2022"
+                                android:textColor="#FFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+                        android:id="@+id/calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/black"
+                        app:colorMiddleTextSelected="@color/primary"
+                        app:colorTopTextSelected="@color/primary"
+                        app:selectorColor="@android:color/transparent"
+                        app:sizeMiddleText="14sp"
+                        app:sizeTopText="16sp"
+                        app:textColorSelected="#FFF" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/point_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_calendar"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/card_calendar"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/circle" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:background="#33D9F0" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/current_date_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/card_calendar"
+                        android:layout_toRightOf="@id/point_layout"
+                        android:text=""
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/card_ind_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/point_layout"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_primary_stroke">
+
+                    <LinearLayout
+                        android:id="@+id/ind_image_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:layout_gravity="center"
+                            android:background="@color/primary" />
+
+                        <FrameLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/circle"
+                            android:padding="0dp">
+                            <!--Circular Image View-->
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/name_logo"
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/individual" />
+
+                        </FrameLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/primary" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ind_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@id/ind_image_layout"
+                        android:text="Individual Recording"
+                        android:textColor="#FFF"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/user_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ind_txt"
+                        android:layout_alignStart="@id/ind_txt"
+                        android:text="new user"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/stats_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/user_name_txt"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/ind_image_layout"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:id="@+id/impact_one_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_one_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="Impact > 40G"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_one_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@id/impact_one_line"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:id="@+id/impact_one_line"
+                                android:layout_width="15dp"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/impact_two_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_two_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="Impact > 60G"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_two_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/impact_two_line"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:id="@+id/impact_two_line"
+                                android:layout_width="15dp"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/impact_three_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_three_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="Concussive Symptoms"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/impact_three_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_above="@+id/impact_three_line"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center_horizontal"
+                                android:text="No"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:id="@+id/impact_three_line"
+                                android:layout_width="15dp"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/white" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/circle_white" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/circle_white" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/circle_white" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/graph_layout"
+                    android:layout_width="320dp"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/card_ind_record"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
+                        android:orientation="vertical"
+                        android:weightSum="11">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="100"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="90"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="80"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="70"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="60"
+                            android:textColor="@color/yellow" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="50"
+                            android:textColor="@color/yellow" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="40"
+                            android:textColor="@color/yellow" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="30"
+                            android:textColor="@android:color/holo_green_light" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="20"
+                            android:textColor="@android:color/holo_green_light" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="10"
+                            android:textColor="@android:color/holo_green_light" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="0"
+                            android:textColor="#FFF" />
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/impact_graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/max_force_layout"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="20dp"
+                    android:background="@drawable/button_grey_transparent_round"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/max_force_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Maximum Force Received :"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/max_force_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0 G"
+                        android:textColor="@color/white"
+                        android:textSize="40sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

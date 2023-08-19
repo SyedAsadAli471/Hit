@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activityMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:layoutDirection="locale">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.otaliastudios.cameraview.CameraView
+                android:id="@+id/camera1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cameraPictureSizeAspectRatio="4:3"
+                android:keepScreenOn="true"
+                app:cameraWhiteBalance="auto"
+                app:cameraMode="picture"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                app:cameraUseDeviceOrientation="true"
+                app:cameraEngine="camera1"
+                app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+                app:cameraPlaySounds="true"
+                app:cameraPictureFormat="jpeg"
+                app:cameraRequestPermissions="true"
+
+                />
+
+            <!--app:cameraHdr="on"-->
+
+            <Button
+                android:id="@+id/permissionsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Approve Permissions"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_gravity="top|center_horizontal" />
+
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:progressBackgroundTint="@color/primary" />
+
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="12dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical|bottom"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:text="SAVE" />
+
+        <Button
+            android:id="@+id/btnRetake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical|bottom"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:text="RETAKE" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical|bottom"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/white"
+            android:text="CANCEL" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:visibility="visible"
+        android:id="@+id/camera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:orientation="vertical"/>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ivSwitchCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical|bottom"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/switch_camera"
+            app:backgroundTint="@color/primary"
+            app:tint="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/photoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_photo"
+            app:tint="@color/white"
+            app:backgroundTint="@color/primary"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end|bottom"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/flash_on"
+            app:backgroundTint="@color/primary"
+            app:tint="@color/white" />
+
+
+
+
+
+
+    </FrameLayout>
+
+</FrameLayout>

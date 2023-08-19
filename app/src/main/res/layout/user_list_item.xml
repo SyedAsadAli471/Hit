@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/ic_round_account_circle_24" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/user_image">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="new user"
+            android:textColor="@color/dark_grey" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/view_user_btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/edit_user_btn"
+            android:background="@drawable/button_rounded_background"
+            android:text="VIEW"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit_user_btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_rounded_background"
+            android:text="EDIT"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            android:background="@color/dark_grey" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

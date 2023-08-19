@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:text="Select Weight"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_below="@id/title"
+        android:id="@+id/picker_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true">
+
+        <NumberPicker
+            android:id="@+id/picker_one"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:descendantFocusability="blocksDescendants"
+            android:theme="@style/NumberPickerText"
+            android:selectionDividerHeight="0dp"/>
+
+
+        <NumberPicker
+            android:id="@+id/picker_two"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:descendantFocusability="blocksDescendants"
+            android:theme="@style/NumberPickerText"
+            android:selectionDividerHeight="0dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+       android:layout_below="@id/picker_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:text="CANCEL"
+            android:background="@drawable/save_button_blue_rounded"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/done_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:text="DONE"
+            android:background="@drawable/save_button_blue_rounded"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
