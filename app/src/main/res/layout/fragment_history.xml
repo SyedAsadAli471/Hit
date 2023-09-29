@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_main">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/space_large"
+        android:src="@drawable/logo_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/space_large"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSettings"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/space_large"
+        android:src="@drawable/settings"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginBottom="@dimen/space_small"
+        android:background="@drawable/bg_main_reverse"
+        android:paddingStart="@dimen/space_large"
+        android:paddingVertical="@dimen/space_medium"
+        app:layout_constraintBottom_toTopOf="@+id/ivPlay"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSearch">
+
+        <TextView
+            android:id="@+id/tvLog"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/space_small"
+            android:text="logbook"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvAvgSpeedKm"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLog"
+            tools:text="00:00:00" />
+
+
+        <TextView
+            android:id="@+id/tvAvgSpeedLabel"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total time recorded"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAvgSpeedKm" />
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="May 2023"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvLog" />
+
+        <TextView
+            android:id="@+id/tvSpeed"
+            style="@style/text_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="13.19"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAvgSpeedKm"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAvgSpeedLabel" />
+
+        <TextView
+            android:id="@+id/tvKM"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text=" km"
+            android:textSize="12sp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpeed"
+           app:layout_constraintStart_toEndOf="@+id/tvSpeed" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImpact"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/circle_red"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDate"
+            android:layout_marginEnd="@dimen/space_large"
+            />
+
+        <TextView
+            android:id="@+id/tvImpact"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintTop_toTopOf="@+id/ivImpact"
+            app:layout_constraintBottom_toBottomOf="@+id/ivImpact"
+            app:layout_constraintStart_toStartOf="@+id/ivImpact"
+            app:layout_constraintEnd_toEndOf="@+id/ivImpact"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tvImpactReceived"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Impact received this month"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:maxWidth="100dp"
+            android:textAlignment="center"
+            android:layout_marginTop="45dp"
+            android:paddingHorizontal="@dimen/space_small"
+            android:paddingBottom="@dimen/space_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivImpact" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGreen"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/circle_green"
+            android:layout_marginStart="@dimen/space_small"
+            app:layout_constraintStart_toStartOf="@id/tvImpactReceived"
+            app:layout_constraintTop_toBottomOf="@id/tvImpactReceived"
+            />
+
+        <TextView
+            android:id="@+id/tvGreen"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintTop_toTopOf="@+id/ivGreen"
+            app:layout_constraintStart_toStartOf="@+id/ivGreen"
+            app:layout_constraintEnd_toEndOf="@id/ivGreen"
+            app:layout_constraintBottom_toBottomOf="@+id/ivGreen"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivYellow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/circle_yellow"
+            app:layout_constraintStart_toEndOf="@id/ivGreen"
+            app:layout_constraintEnd_toStartOf="@+id/ivRed"
+            app:layout_constraintTop_toBottomOf="@id/tvImpactReceived"
+            />
+
+        <TextView
+            android:id="@+id/tvYellow"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintTop_toTopOf="@+id/ivYellow"
+            app:layout_constraintStart_toStartOf="@+id/ivYellow"
+            app:layout_constraintEnd_toEndOf="@id/ivYellow"
+            app:layout_constraintBottom_toBottomOf="@+id/ivYellow"
+            tools:text="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRed"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/circle_red"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/space_small"
+            app:layout_constraintTop_toBottomOf="@+id/tvImpactReceived"/>
+
+        <TextView
+            android:id="@+id/tvRed"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintTop_toTopOf="@+id/ivRed"
+            app:layout_constraintStart_toStartOf="@+id/ivRed"
+            app:layout_constraintEnd_toEndOf="@id/ivRed"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRed"
+            tools:text="0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNews"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/news"
+        app:layout_constraintBottom_toTopOf="@+id/tvNews"
+        app:layout_constraintEnd_toEndOf="@+id/tvNews"
+        app:layout_constraintStart_toStartOf="@+id/tvNews" />
+
+    <TextView
+        android:id="@+id/tvNews"
+        style="@style/text_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_medium_large"
+        android:paddingBottom="@dimen/space_large"
+        android:text="News"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/home_icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlay"
+        app:layout_constraintEnd_toEndOf="@+id/tvPlay"
+        app:layout_constraintStart_toStartOf="@+id/tvPlay" />
+
+    <TextView
+        android:id="@+id/tvPlay"
+        style="@style/text_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_large"
+        android:text="Play"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLogs"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/log"
+        app:layout_constraintBottom_toTopOf="@+id/tvLogs"
+        app:layout_constraintEnd_toEndOf="@+id/tvLogs"
+        app:layout_constraintStart_toStartOf="@+id/tvLogs" />
+
+    <TextView
+        android:id="@+id/tvLogs"
+        style="@style/text_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_medium_large"
+        android:paddingBottom="@dimen/space_large"
+        android:text="Logs"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

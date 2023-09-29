@@ -2,4 +2,29 @@
 <resources>
     <dimen name="thumb_size">30dp</dimen>
     <dimen name="thumb_text_size">16sp</dimen>
+
+    <!-- Small Text Sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+
+    <!-- Medium Text Sizes -->
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_medium_large">18sp</dimen>
+
+    <!-- Large Text Sizes -->
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_large_title">28sp</dimen>
+
+
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+    <dimen name="space_medium_large">48dp</dimen>
+    <dimen name="space_extra_large">64dp</dimen>
+
+    <dimen name="v_spacing_small">4dp</dimen>
+    <dimen name="v_spacing_medium">8dp</dimen>
+    <dimen name="v_spacing_large">16dp</dimen>
+
+
+
 </resources>

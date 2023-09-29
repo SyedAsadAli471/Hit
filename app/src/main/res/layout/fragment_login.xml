@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="@dimen/space_large"
+    android:paddingHorizontal="@dimen/space_large"
+    android:background="@drawable/bg_main">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/logo_small" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvAlthough"
+            style="@style/text_extra_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/space_large"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_et_primary"
+            android:hint="@string/enter_name"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="@color/dark_grey"
+            android:textColor="@color/dark_grey"
+            android:layout_marginTop="@dimen/space_medium"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlthough"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etEmail"
+            android:layout_marginTop="@dimen/space_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_et_primary"
+            android:hint="@string/enter_email"
+            android:gravity="center"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/dark_grey"
+            android:textColorHint="@color/dark_grey"
+            app:layout_constraintTop_toBottomOf="@+id/etName"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail">
+        <TextView
+            android:id="@+id/tvForgot"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/space_large"
+            android:text="@string/forgotten_username_or_password_click"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvClickHere"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/space_large"
+            android:text="@string/here"
+            android:textColor="@color/link_color"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@+id/tvForgot"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvIns"
+            style="@style/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/space_large"
+            android:text="@string/for_email_link"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintStart_toEndOf="@+id/tvClickHere"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/btnLogin"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/space_medium"
+                android:text="@string/loginDash"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIns"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--        <Button-->
+        <!--            android:id="@+id/btnProfile"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@string/profile_creating"-->
+        <!--            android:textAllCaps="true"-->
+        <!--            android:layout_marginHorizontal="@dimen/space_large"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            style="@style/btn_primary"-->
+        <!--            android:layout_marginVertical="@dimen/space_large"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/tvAlthough"/>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

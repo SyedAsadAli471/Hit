@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_small">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <!-- Other text attributes -->
+    </style>
+
+    <style name="text_large">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="text_extra_large">
+        <item name="android:textSize">@dimen/text_size_large_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="btn_primary">
+       <item name="android:background">@drawable/bg_btn_primary</item>
+       <item name="android:backgroundTint">@null</item>
+       <item name="backgroundTint">@null</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="et_primary">
+        <item name="android:background">@drawable/bg_et_primary</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textColorHint">@color/dark_grey</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+
+</resources>

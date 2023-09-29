@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:paddingTop="@dimen/space_large">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/space_small"
+        android:padding="12dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:paddingHorizontal="@dimen/space_extra_large"
+            android:paddingBottom="@dimen/space_large"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tvTerms"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/space_large"
+                android:text="@string/agree_to_terms_amp_conditions"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/etView"
+                style="@style/text_small"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginHorizontal="@dimen/space_large"
+                android:background="@drawable/bg_et_primary"
+                android:gravity="center"
+                android:paddingVertical="@dimen/space_small"
+                android:text="@string/view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTerms" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/space_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etView">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/logo_small"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPipe"
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/line"
+                    android:tint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/ivHit"
+                    app:layout_constraintStart_toEndOf="@+id/ivHit"
+                    app:layout_constraintTop_toTopOf="@id/ivHit" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStrava"
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:layout_centerInParent="true"
+                    android:paddingTop="5dp"
+                    android:src="@drawable/strava_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/ivHit"
+                    app:layout_constraintStart_toEndOf="@+id/ivPipe"
+                    app:layout_constraintTop_toTopOf="@id/ivHit" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/etConnect"
+                style="@style/text_small"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:background="@drawable/bg_et_primary"
+                android:gravity="center"
+                android:paddingVertical="@dimen/space_small"
+                android:text="@string/connect"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clIcons" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHit2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/space_large"
+                android:paddingTop="10dp"
+                android:src="@drawable/logo_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etConnect" />
+
+            <TextView
+                android:id="@+id/tvConnect"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_contact_info"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/ivHit2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivHit2"
+                app:layout_constraintTop_toTopOf="@+id/ivHit2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etName"
+                style="@style/et_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_medium"
+                android:hint="@string/name"
+                app:layout_constraintTop_toBottomOf="@+id/tvConnect" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etContact"
+                style="@style/et_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_small"
+                android:hint="@string/contect_number"
+                app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+
+            <TextView
+                android:id="@+id/tvSubmit"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space_medium"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etContact" />
+
+            <TextView
+                android:id="@+id/tvPassword"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_medium"
+                android:text="@string/password"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubmit" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPass"
+                style="@style/et_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_medium"
+                android:hint="@string/enter"
+                app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etConfirmPass"
+                style="@style/et_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/space_small"
+                android:hint="@string/confirm_password"
+                app:layout_constraintTop_toBottomOf="@+id/etPass" />
+
+            <TextView
+                android:id="@+id/tvClickHere"
+                style="@style/text_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/space_large"
+                android:text="@string/complete_profile_creation"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etConfirmPass" />
+
+            <!--        <Button-->
+            <!--            android:id="@+id/btnProfile"-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/profile_creating"-->
+            <!--            android:textAllCaps="true"-->
+            <!--            android:layout_marginHorizontal="@dimen/space_large"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            style="@style/btn_primary"-->
+            <!--            android:layout_marginVertical="@dimen/space_large"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/tvAlthough"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

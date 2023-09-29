@@ -12,6 +12,15 @@
     <color name="grey_dark">#393534</color>
     <color name="light_grey">#80787878</color>
     <color name="yellow">#DBDB3D</color>
+    <color name="blue_700">#072839</color>
+    <color name="link_color">#3366CC</color>
+    <color name="green">#42a432</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#32ade6</color>
+    <color name="blue_800">#32ade6</color>
+
+
+
 
 
 </resources>
